@@ -1,7 +1,7 @@
 .RomLeft {
     position:relative;
-    left:-86.60px;
-    width:86.60px;
+    left:-86.602540378px;
+    width:86.602540378px;
     top:-25px;   
     height:100px;
     transform:skewY(30deg);
@@ -11,24 +11,25 @@
     position:relative;
     top:-125px;
     left:0px;
-    width:86.60px;
+    width:86.602540378px;
     height:100px;
     transform:skewY(150deg);
     background: #444444;
 }
 .RomTop {
     position:relative;
-    left:-43.30px;
+    left:-43.301270189px;
     top:-300px;
-    width:86.60px;
+    width:86.602540378px;
     height:100px;
     transform:rotate(-60deg) skewY(30deg);
-    background: #666666
+    background: #666666;
 }
 .cube {
     position: fixed;
     left: 50%;
     top: 50%;
+    filter: drop-shadow(0px 30px 20px #777777);
     transition: transform 400ms;
 }
 
@@ -36,4 +37,8 @@
 
 .cube:hover {
     transform: translate(0px, -25px);
+}
+
+.cube:active {
+    transform: translate(0px, -75px);
 }
