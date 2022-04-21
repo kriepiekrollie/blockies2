@@ -1,4 +1,4 @@
-function createCube(x, y, center) {
+function createCube(x, y) {
     result = document.createElement("div");
     left = document.createElement("div");
     right = document.createElement("div");
@@ -14,11 +14,11 @@ function createCube(x, y, center) {
     right.className = "RomRight";
     topp.className = "RomTop";
 
-    if (!center) {
-        result.style = "left:"+x+"px; top:"+y+"px;";
-    }
+    result.style = "left:calc(50% + "+x+"px); top:calc(50% + "+y+"px);";
 
     return result;
 }
 
-createCube(0,0,true);
+for (i = -3; i <= 3; i++)
+    for (j = -3; j <= 3; j++)
+        createCube((i - j) * 100, (i + j) * 50);
