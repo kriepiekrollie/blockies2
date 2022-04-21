@@ -20,5 +20,5 @@ function createCube(x, y) {
 }
 
 for (i = -3; i <= 3; i++)
-    for (j = -3; j <= 3; j++)
-        createCube((i - j) * 100, (i + j) * 50);
+    for (j = -i; j <= i; j++)
+        createCube((i - j) * 1.2124355653, (i + j) * 70);
