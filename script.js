@@ -27,7 +27,6 @@ function createCube(x, y) {
     return result;
 }
 
-createCube(0, 0);
 dx = 1;
 dy = 0;
 
@@ -42,25 +41,29 @@ document.onkeydown = function(e) {
             dy = 1;
             break;
         case "ArrowLeft":
-            dx = 1;
-            dy = 0;
-            break;
-        case "ArrowRight":
             dx = -1;
             dy = 0;
             break;
+        case "ArrowRight":
+            dx = 1;
+            dy = 0;
+            break;
     }
 }
 
+fruit = true;
 function update() {
-    for (i = cubes.length - 1; i > 0; i++) {
+    if (fruit) {
+        createCube(0, 0);
+    }
+    for (i = cubes.length - 1; i > 0; i--) {
         X[i] = X[i - 1];
         Y[i] = Y[i - 1];
-        cubes[i].style = "left:calc(50% + "+((X[i] - Y[i]) * 121.24355653)+"px); top:calc(50% + "+(X[i] + Y[i]) * 70+"px);";
+        cubes[i].style = "left:calc(50% + "+((X[i] - Y[i]) * 121.24355653)+"px); top:calc(50% + "+(X[i] + Y[i]) * 70+"px); z-index: " + (X[i] + Y[i]) + ";";
     }
     X[0] += dx;
     Y[0] += dy;
-    cubes[0].style =  "left:calc(50% + "+((X[0] - Y[0]) * 121.24355653)+"px); top:calc(50% + "+(X[0] + Y[0]) * 70+"px);";
+    cubes[0].style =  "left:calc(50% + "+((X[0] - Y[0]) * 121.24355653)+"px); top:calc(50% + "+(X[0] + Y[0]) * 70+"px); z-index: " + (X[i] + Y[i]) + ";";
 }
 
-setInterval(update, 100);
+setInterval(update, 500);
