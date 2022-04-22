@@ -35,6 +35,7 @@
 
 /* There must be some nice way to tile these cubes in css? */
 
+/*
 .cube:hover {
     transform: translate(0px, -25px);
 }
@@ -42,3 +43,4 @@
 .cube:active {
     transform: translate(0px, -75px);
 }
+*/
